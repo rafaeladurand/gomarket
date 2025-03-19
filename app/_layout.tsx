@@ -8,13 +8,13 @@ import ConfirmationScreen from "./confirmation";
 import LoginScreen from "./login";
 import RegisterScreen from "./register";
 import { Ionicons } from "@expo/vector-icons";
+import SplashScreen from "./splash";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const TabNavigator = () => {
-  const { cart } = useCart();  // Pegando a lista de produtos do carrinho
-
+  const { cart } = useCart();
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -66,6 +66,20 @@ const TabNavigator = () => {
             <Ionicons name="cart-outline" color={color} size={size} />
           ),
           tabBarBadge: cart.length > 0 ? cart.length : undefined,
+          tabBarBadgeStyle: {
+            backgroundColor: "#FF5722", 
+            color: "#fff", 
+            fontSize: 12,
+            width: 20, 
+            height: 20, 
+            borderRadius: 10, 
+            justifyContent: "center", 
+            alignItems: "center", 
+            fontWeight: "bold",
+            position: "absolute", 
+            top: -10,
+            right: -15,
+          },
         }}
       />
     </Tab.Navigator>
@@ -75,6 +89,7 @@ const TabNavigator = () => {
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="splash" component={SplashScreen} />
       <Stack.Screen name="home" component={TabNavigator} />
       <Stack.Screen name="confirmation" component={ConfirmationScreen} />
       <Stack.Screen name="login" component={LoginScreen} />
