@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fef6e9",
     padding: 20,
+    paddingBottom: 80,
   },
   title: {
     fontSize: 22,
@@ -143,6 +144,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     elevation: 5,
+
   },
   checkoutText: {
     fontSize: 18,
