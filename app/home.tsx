@@ -159,7 +159,7 @@ const HomeScreen = () => {
         <Ionicons name="search" size={20} color="#666" style={styles.searchIcon} />
         <TextInput
           style={styles.searchBar}
-          placeholder="Buscar produto..."
+          placeholder="Buscar produto"
           placeholderTextColor="#666"
           value={search}
           onChangeText={setSearch}
